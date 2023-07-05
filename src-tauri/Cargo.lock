@@ -2569,6 +2569,7 @@ dependencies = [
  "ntapi",
  "once_cell",
  "rayon",
+ "serde",
  "winapi",
 ]
 
