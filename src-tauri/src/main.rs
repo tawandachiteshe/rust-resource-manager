@@ -14,6 +14,8 @@ struct CPUMemInfo {
     free: String,
     usage: String,
     total: String,
+    free_size: u64,
+    total_size: u64
 }
 
 #[derive(Serialize, Deserialize)]
@@ -67,6 +69,8 @@ async fn calculate_mem() -> String {
             free: String::new(),
             usage: String::new(),
             total: String::new(),
+            free_size: 0u64,
+            total_size: 0u64
         },
     };
 
@@ -85,6 +89,9 @@ async fn calculate_mem() -> String {
     system_info.mem.free = free_mem_size.to_string_as(false);
     system_info.mem.total = (total_mem_size).to_string_as(false);
     system_info.mem.usage = saturating_sub_bytes(sys_mem.total, sys_mem.free).to_string_as(false);
+    system_info.mem.free_size = saturating_sub_bytes(sys_mem.total, sys_mem.free).as_u64();
+    system_info.mem.total_size = total_mem_size.as_u64();
+
     //system_info.mem.free = saturating_sub_bytes(, r);
 
     //Network stuff here
