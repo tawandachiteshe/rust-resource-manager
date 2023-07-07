@@ -40,7 +40,7 @@ async fn init_process(window: Window) -> Result<String, String> {
     std::thread::spawn(move || {
         loop {
             sys.refresh_all();
-            std::thread::sleep(Duration::from_secs(1));
+            std::thread::sleep(Duration::from_millis(500));
             window.emit("system-stats", &sys).unwrap();
         }
     });
