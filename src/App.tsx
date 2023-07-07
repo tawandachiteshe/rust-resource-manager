@@ -3,7 +3,7 @@ import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/tauri";
 
 import { emit, listen } from '@tauri-apps/api/event'
-
+import  "./style.css"
 
 
 function App() {

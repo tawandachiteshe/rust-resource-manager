@@ -12,7 +12,7 @@
   },
   "tauri": {
     "allowlist": {
-      "all": false,
+      "all": true,
       "shell": {
         "all": false,
         "open": true
@@ -37,7 +37,7 @@
       {
         "fullscreen": false,
         "resizable": true,
-        "title": "calculator",
+        "title": "Resource Viewer",
         "width": 800,
         "height": 600
       }

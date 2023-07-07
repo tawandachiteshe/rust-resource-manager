@@ -3,11 +3,11 @@
 
 extern crate systemstat;
 use serde::{Deserialize, Serialize};
-use serde_json::Error;
+
 use sysinfo::SystemExt;
 use std::vec;
-use systemstat::{saturating_sub_bytes, ByteSize, CPULoad, Duration, Platform, System};
-use tauri::{window, Window, Manager};
+use systemstat::{saturating_sub_bytes, ByteSize, Duration, Platform, System};
+use tauri::{Window, Manager};
 
 #[derive(Serialize, Deserialize)]
 struct CPUMemInfo {
